@@ -33,5 +33,4 @@ class GMaps:
 
         
         except IndexError:
-            msg_error = "GoogleMaps didn't find any matching place"
-            return msg_error
+        	return "Gmaps didn't find any place."
