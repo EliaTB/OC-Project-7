@@ -6,9 +6,6 @@ class GMaps:
 
     def __init__(self, api_key):
         self.api_key = api_key
-        self.address = []
-        self.lat = []
-        self.lng = []
  
 
     def get_position(self, question):
@@ -25,11 +22,15 @@ class GMaps:
         data = response.json()
 
         try:
-            self.address = data["results"][0]["formatted_address"]
-            self.lat = data["results"][0]["geometry"]["location"]["lat"]
-            self.lng = data["results"][0]["geometry"]["location"]["lng"]
+            address = data["results"][0]["formatted_address"]
+            lat = data["results"][0]["geometry"]["location"]["lat"]
+            lng = data["results"][0]["geometry"]["location"]["lng"]
 
-            return self.address, self.lat, self.lng,
+            return {
+                "adress":  address,
+                "latitude": lat,
+                "longitude": lng
+            }
 
         
         except IndexError:

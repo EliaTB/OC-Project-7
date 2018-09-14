@@ -21,10 +21,11 @@ class TestGMaps():
 		            return MockResponse()
 
 		        monkeypatch.setattr(requests, 'get', mockreturn)
+		        gmap_result = gmap.get_position('paris')
 
-		        assert gmap.get_position('paris') == (
+		        assert gmap_result["adress"] == (
 		            result["results"][0]['formatted_address'])
-		        assert gmap.get_position('paris') == (
+		        assert gmap_result["latitude"] == (
 		            result["results"][0]['geometry']['location']['lat'])
-		        assert gmap.get_position('paris') == (
+		        assert gmap_result["longitude"] == (
 		            result["results"][0]['geometry']['location']['lng'])
