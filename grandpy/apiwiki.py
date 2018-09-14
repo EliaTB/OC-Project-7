@@ -10,6 +10,7 @@ class Wiki:
     def get_wiki_result(self, question):
         try:
             wiki_page = wikipedia.page(question)
+            
             return {
                 "title": wiki_page.title,
                 "summary": wiki_page.summary
