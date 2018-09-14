@@ -1,5 +1,4 @@
 import re
-from stop_word import STOP_WORDS
 
 CUSTOM_WORDS = ["salut", "grandpy", "grandpybot", "grand", "papy", "bot", "adresse"]
 
