@@ -1,21 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <title>GranpyBot </title>
-    <link rel="stylesheet" href="/static/style.css">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>GrandpyBot </title>
+
+    <!-- <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}"> -->
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1 class="header-heading">Granpybot</h1>
+            <h1 class="header-heading">Grandpy Bot</h1>
         </div>
-        <div class="wrap">
-            <div class="search">
-              <input type="text" class="searchTerm" placeholder="qu'est que vous voulez savoir?">
-            </div>
+        <hr>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Qu'est que vous voulez savoir?" aria-label="Qu'est que vous voulez savoir?" aria-describedby="button-addon2">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2">Recherche</button>
+          </div>
         </div>
+        <div class="border border-secondary rounded">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam luctus feugiat blandit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vehicula ornare commodo. Suspendisse potenti. Sed vel nisi eleifend, rutrum ante ac, lacinia erat. Morbi semper ex eget nisl maximus facilisis. Cras nec porta massa. Maecenas vehicula odio eu purus maximus, a malesuada turpis bibendum.</p>
+            <br>
+            <P>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam luctus feugiat blandit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vehicula ornare commodo. Suspendisse potenti. Sed vel nisi eleifend, rutrum ante ac, lacinia erat. Morbi semper ex eget nisl maximus facilisis. Cras nec porta massa. Maecenas vehicula odio eu purus maximus, a malesuada turpis bibendum.</P>
+        </div>
+        <hr>
+        <footer class="card text-center">
+          <div class="card-body">
+            <p>Elia Benfatto - <a href="#" class="badge badge-primary">Git Hub</a></p>
+          </div>
+        </footer>        
     </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
 </html>

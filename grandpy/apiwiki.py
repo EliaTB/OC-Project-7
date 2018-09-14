@@ -11,8 +11,8 @@ class Wiki:
         try:
             wiki_page = wikipedia.page(question)
             return {
-                'wiki_title': wiki_page.title,
-                'wiki_summary': wiki_page.summary
+                'title': wiki_page.title,
+                'summary': wiki_page.summary
             }
 
 
