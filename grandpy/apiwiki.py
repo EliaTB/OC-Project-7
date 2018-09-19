@@ -17,5 +17,5 @@ class Wiki:
             }
 
 
-        except (wikipedia.exceptions.PageError):
+        except IndexError:
             return "didn't find any page."

@@ -1,6 +1,4 @@
 from requests import get
-import logging
-
 
 class GMaps:
 
@@ -16,8 +14,6 @@ class GMaps:
 
         response = get('https://maps.googleapis.com/maps/api/geocode/json',
                        params=parameters)
-        if response.status_code != 200:
-            logging.error(" Localisation failed ")
 
         data = response.json()
 
@@ -34,4 +30,4 @@ class GMaps:
 
         
         except IndexError:
-        	return "Gmaps didn't find any place."
+            return "Gmaps didn't find any place."
