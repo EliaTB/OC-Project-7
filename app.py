@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, url_for
+from flask import Flask, render_template, request, url_for, jsonify
 import json
 
 from grandpy.apiwiki import *
@@ -24,7 +24,7 @@ def get_json():
 	gmap_place = gmap.get_position(parsed_input)
 
 	if gmap_place != "didn't find any place.":
-		wiki_result = Wiki.get_wiki_result(parsed_input)
+		wiki_result = wiki.get_wiki_result(parsed_input)
 
 		if wiki_result != "didn't find any page.":
 				

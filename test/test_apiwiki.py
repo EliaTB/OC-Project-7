@@ -12,12 +12,12 @@ class TestApiWiki:
         	}
 
 
-		def mockreturn(question):
+		def mockreturn(self, question):
 			return result
 		place = 'paris'
 		monkeypatch.setattr(Wiki, 'get_wiki_result', mockreturn)
-		wiki_result = Wiki.get_wiki_result(place)
-		
-		
+		wiki = Wiki()
+		wiki_result = wiki.get_wiki_result(place)
+				
 		assert wiki_result['title'] == 'Paris'
 		assert wiki_result['summary'] =='Capitale de la France'

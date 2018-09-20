@@ -15,12 +15,11 @@ class TestGMaps:
 			return result
 
 		monkeypatch.setattr(requests, 'get', mockreturn)
-		gmap = GMaps('google_api_key')
-		gmap_result = gmap.get_position('paris')
+		gmap_result = GMaps('api_key').get_position('paris')
 
-		assert gmap_result["adress"] == (
+		assert gmap_result['address'] == (
 			result["results"][0]['formatted_address'])
-		assert gmap_result["latitude"] == (
+		assert gmap_result['latitude'] == (
 			result["results"][0]['geometry']['location']['lat'])
-		assert gmap_result["longitude"] == (
+		assert gmap_result['longitude'] == (
 		 	result["results"][0]['geometry']['location']['lng'])

@@ -5,9 +5,9 @@ $(function() {
 			'/_get_json',				//url                     
 			{question: userInput},  	//data
 
-			function () {
-				$("#gmapresult").text(address);
-				$("#wikireuslt").text(wiki_summary);
+			function (data) {
+				$("#gmapresult").text(data.address);
+				$("#wikireuslt").text(data.wiki_summary);
 			}
 		);
 	});		
