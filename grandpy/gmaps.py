@@ -23,11 +23,11 @@ class GMaps:
             lng = data["results"][0]["geometry"]["location"]["lng"]
 
             return {
-                "adress":  address,
+                "address":  address,
                 "latitude": lat,
                 "longitude": lng
             }
 
         
         except IndexError:
-            return "Gmaps didn't find any place."
+            return "didn't find any place."

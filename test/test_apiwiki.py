@@ -21,4 +21,3 @@ class TestApiWiki:
 		
 		assert wiki_result['title'] == 'Paris'
 		assert wiki_result['summary'] =='Capitale de la France'
-	
