@@ -4,6 +4,7 @@ import json
 from grandpy.apiwiki import *
 from grandpy.gmaps import *
 from grandpy.parseur import *
+from grandpy.messages import *
 from grandpy.stop_word import STOP_WORDS
 from config import google_api_key
 
@@ -25,14 +26,24 @@ def get_json():
 
 	if gmap_place != "didn't find any place.":
 		wiki_result = wiki.get_wiki_result(parsed_input)
+		msg1 = return_address(gmap_place["address"])
 
 		if wiki_result != "didn't find any page.":
+			msg2 = return_story(wiki_result['summary'])
+
+		else:
+			msg1 = return_failure()
+
+	else:
+		msg1 = return_failure()
+
 				
-			return jsonify(address = gmap_place["address"],
-		                  lat = gmap_place["latitude"],
-		                  lng = gmap_place["longitude"],
-		                  wiki_title = wiki_result['title'],
-		                  wiki_summary = wiki_result['summary'])
+	return jsonify(lat = gmap_place["latitude"],
+		        	lng = gmap_place["longitude"],
+		        	wiki_title = wiki_result['title'],
+		        	message1 = msg1,
+		        	message2 = msg2,
+		        	failure_msg = None)
 
 
 @app.route('/')

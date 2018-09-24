@@ -11,11 +11,12 @@ class TestGMaps:
             {"lat": 48.856614, "lng": 2.3522219}}, "formatted_address": "Paris, France"}]}
 
 
-		def mockreturn():
+		def mockreturn(self, question):
 			return result
 
 		monkeypatch.setattr(requests, 'get', mockreturn)
-		gmap_result = GMaps('api_key').get_position('paris')
+		gmap = GMaps('api_key')
+		gmap_result = gmap.get_position('paris')
 
 		assert gmap_result['address'] == (
 			result["results"][0]['formatted_address'])
