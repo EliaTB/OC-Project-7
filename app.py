@@ -42,8 +42,7 @@ def get_json():
 		        	lng = gmap_place["longitude"],
 		        	wiki_title = wiki_result['title'],
 		        	message1 = msg1,
-		        	message2 = msg2,
-		        	failure_msg = None)
+		        	message2 = msg2,)
 
 
 @app.route('/')
