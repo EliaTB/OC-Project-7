@@ -1,14 +1,22 @@
 $(function() {
 	$('#submit').on('click', function() {
 		var userInput = $('input[name="question"]').val();
-		$.getJSON(
-			'/_get_json',				//url 
+		$.getJSON(			
+			//url
+			'/_get_json',				
+			//data
+			{question: userInput},  	
+			//func
+			function (data) {			
 
-			{question: userInput},  	//data
+				if (typeof data.failure_msg !== 'undefined') {	
+					$("#gmapresult").text(data.failure_msg)
+				}
 
-			function (data) {			//func
+				else {
 				$("#gmapresult").text(data.message1);
 				$("#wikireuslt").text(data.message2);
+				}
 			}
 		);
 	});		

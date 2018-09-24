@@ -30,4 +30,4 @@ class GMaps:
 
         
         except IndexError:
-            return "didn't find any place."
+            return "no result"

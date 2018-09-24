@@ -12,7 +12,7 @@ ADRESS_MGS = [
 
 
 
-STORY_MGS = [
+SUMMARY_MGS = [
     ">GrandPy : Et t'ai je déjà raconté cette histoire ? :\n",
     ">GrandPy : Je me souviens que ....\n",
     ">GrandPy : Si tu as deux minutes , je peux te raconter une petite histoire.. :\n",
@@ -37,7 +37,7 @@ def return_address(address):
 	return message
 
 def return_story(summary):
-	random_msg = random.choice(STORY_MGS)
+	random_msg = random.choice(SUMMARY_MGS)
 	message = random_msg + summary
 	return message
 

@@ -18,4 +18,4 @@ class Wiki:
 
 
         except IndexError:
-            return "didn't find any page."
+            return "no result"
