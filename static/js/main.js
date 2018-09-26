@@ -14,8 +14,16 @@ $(function() {
 				}
 
 				else {
-				$("#gmapresult").text(data.message1);
-				$("#wikireuslt").text(data.message2);
+					$("#gmapresult").text(data.message1);
+					$("#wikireuslt").text(data.message2);
+
+					var lat = parseFloat(data.lat)
+					var lng = parseFloat(data.lng)
+
+
+                	initMap(lat, lng);
+                	$("#map").css({display:"block"})
+				
 				}
 			}
 		);
@@ -23,11 +31,16 @@ $(function() {
 });
 
 
+function initMap(lat, lng) {
 
-// $(function() {
-// 	$('#submit').on('click', function() {
-// 		$("#gmapresult").text("test");
-// 		$("#wikireuslt").text("second test");
+	var pos = {lat: +lat, lng: +lng};
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 10,
+        center: pos
+    });
 
-// 	});
-// });
+    var marker = new google.maps.Marker({
+        position: pos,
+        map: map
+    })
+};

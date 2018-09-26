@@ -14,7 +14,6 @@
     <!-- <link rel="stylesheet" href="/static/style.css"> -->
 
     <script async type="text/javascript" src="../static/js/main.js"></script>
-    <!-- <script async src="https://maps.googleapis.com/maps/api/js?key={{api_key}}" type="text/javascript"></script> -->
 </head>
 <body>
     <div class="container">
@@ -29,9 +28,11 @@
             <button class="btn btn-outline-secondary" type="button" id="submit">Recherche</button>
           </div>
         </div>
-        <div style="height: 500px">
+        <div>
             <div id="gmapresult"></div>
-            <div id="wikireuslt"></div>    
+            <div id="wikireuslt"></div>
+            <div id= "map" style="height: 300px; display: none">        
+            </div>   
         </div>
         <hr>
         <footer class="card text-center">
@@ -48,5 +49,9 @@
     <!-- Popper.js, then Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <!-- js map -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAe8ZfBTxoqDDExW6lqIEX0Tcge1GVkht8&callback=initMap"
+    async defer></script>
 </body>
 </html>
