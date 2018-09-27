@@ -26,26 +26,28 @@ def get_json():
 
 	if gmap_place != "no result":
 		wiki_result = wiki.get_wiki_result(parsed_input)
-		msg1 = return_address(gmap_place["address"])
+		msg_adress = return_address(gmap_place["address"])
 
 		if wiki_result != "no result":
-			msg2 = return_story(wiki_result['summary'])
+			msg_summary = return_story(wiki_result['summary'])
 
 			return jsonify(lat = gmap_place["latitude"],
 		        	lng = gmap_place["longitude"],
-		        	wiki_title = wiki_result['title'],
-		        	message1 = msg1,
-		        	message2 = msg2)
+		        	message1 = msg_adress,
+		        	message2 = msg_summary,
+		        	error = False)
 
 		else:
 			failure_msg = return_failure()
 			return jsonify(message1 = failure_msg,
-						message2 = "")
+						message2 = "",
+						error = True)
 
 	else:
 		failure_msg = return_failure()
 		return jsonify(message1 = failure_msg,
-					message2 = "")
+					message2 = "",
+					error = True)
 
 
 @app.route('/')
