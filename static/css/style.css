@@ -2,6 +2,7 @@
     height: 350px; 
     display: none;
     margin-top: 20px;
+    border-radius: 5px;
 }
 
 #grandpyanswer {
@@ -14,7 +15,6 @@
     padding: 10px;
     margin: 10px 0;
 }
-
 
 .box {
     padding: 6px;

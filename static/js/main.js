@@ -1,31 +1,39 @@
 $(function() {
 	$('#submit').on('click', function() {
 		var userInput = $('input[name="question"]').val();
-		$.getJSON(			
-			//url
-			'/_get_json',				
-			//data
-			{question: userInput},  	
-			//func
-			function (data) {			
+		
+		if (userInput == "") {
+			$("#gmapresult").text("Grandpy: Vous n'avez rien mis dans la barre de recherche!");
+			$("#map").css({display:"none"})
+			$("#wikireuslt").css({display:"none"})
+		}
+		else {
+			$.getJSON(			
+				//url
+				'/_get_json',				
+				//data
+				{question: userInput},  	
+				//func
+				function (data) {			
 
-				if (typeof data.failure_msg !== 'undefined') {	
-					$("#gmapresult").text(data.failure_msg)
-					$("#map").css({display:"none"})
+					if (typeof data.failure_msg !== 'undefined') {	
+						$("#gmapresult").text(data.failure_msg)
+						$("#map").css({display:"none"})
+					}
+					else {
+						$("#gmapresult").text(data.message1);
+						$("#wikireuslt").text(data.message2);
+						$("#wikireuslt").css({display:"block"})
+
+						var lat = parseFloat(data.lat)
+						var lng = parseFloat(data.lng)
+
+	                	initMap(lat, lng);
+	                	$("#map").css({display:"block"})				
+					}
 				}
-
-				else {
-					$("#gmapresult").text(data.message1);
-					$("#wikireuslt").text(data.message2);
-
-					var lat = parseFloat(data.lat)
-					var lng = parseFloat(data.lng)
-
-                	initMap(lat, lng);
-                	$("#map").css({display:"block"})				
-				}
-			}
-		);
+			);
+		}
 	});		
 });
 

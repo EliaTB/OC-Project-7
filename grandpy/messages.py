@@ -1,8 +1,5 @@
 import random
 
-""" Set messages GrandPy randomly uses to answer the user query """
-
-
 
 ADRESS_MGS = [
     "GrandPy : Bien sûr voici l'adresse:",
@@ -13,14 +10,14 @@ ADRESS_MGS = [
 
 
 SUMMARY_MGS = [
-    "GrandPy : Et t'ai je déjà raconté cette histoire ? :",
-    "GrandPy : Je me souviens que ....",
-    "GrandPy : Si tu as deux minutes , je peux te raconter une petite histoire.. :",
-    "GrandPy : Est-ce que tu savais que....",
+    "GrandPy : Et t'ai je déjà raconté cette histoire ?  ",
+    "GrandPy : Je me souviens que...  ",
+    "GrandPy : Si tu as deux minutes , je peux te raconter une petite histoire... ",
+    "GrandPy : Est-ce que tu savais que...  ",
 	]
 
 
-FAILURE_MESSAGES = [
+FAILURE_MGS = [
    "GrandPy : Ça ne me dit rien du tout, fais attention à l'orthographe da la recherche",
    "GrandPy : je n'ai pas de connaissance à ce sujet-là, fais attention à l'orthographe recherche"
     ]
@@ -28,7 +25,7 @@ FAILURE_MESSAGES = [
 
 
 def return_failure():
-	message = random.choice(FAILURE_MESSAGES)
+	message = random.choice(FAILURE_MGS)
 	return message
 
 def return_address(address):
