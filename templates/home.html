@@ -11,7 +11,7 @@
 
     <title>GrandpyBot </title>
 
-    <!-- <link rel="stylesheet" href="/static/style.css"> -->
+    <link rel="stylesheet" href="/static/css/style.css">
 
     <script async type="text/javascript" src="../static/js/main.js"></script>
 </head>
@@ -21,18 +21,17 @@
             <h1 class="header-heading">Grandpy Bot</h1>
         </div>
         <hr>
-        <br>
         <div class="input-group mb-3">
-          <input name="question" type="text" class="form-control" placeholder="Qu'est que vous voulez savoir?" aria-describedby="button-addon2">
+          <input name="question" type="text" class="form-control" placeholder="Insérez votre question pour grandpy ici" aria-describedby="button-addon2">
           <div class="input-group-append">
             <button class="btn btn-outline-secondary" type="button" id="submit">Recherche</button>
           </div>
         </div>
-        <div>
-            <div id="gmapresult"></div>
-            <div id="wikireuslt"></div>
-            <div id= "map" style="height: 300px; display: none">        
-            </div>   
+        <div id="grandpyanswer">
+            <div class="box" id="gmapresult">Grandpy: Qu'est que vous voulez savoir?</div>
+            <div class="box" id="wikireuslt"></div>        
+        </div>
+        <div id= "map" class="border border-primary">        
         </div>
         <hr>
         <footer class="card text-center">
@@ -51,7 +50,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
     <!-- js map -->
-    <script src="https://maps.googleapis.com/maps/api/js?key={apikey}&callback=initMap"
+    <script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap"
     async defer></script>
 </body>
 </html>

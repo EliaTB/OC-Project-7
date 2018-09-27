@@ -11,6 +11,7 @@ $(function() {
 
 				if (typeof data.failure_msg !== 'undefined') {	
 					$("#gmapresult").text(data.failure_msg)
+					$("#map").css({display:"none"})
 				}
 
 				else {
@@ -20,10 +21,8 @@ $(function() {
 					var lat = parseFloat(data.lat)
 					var lng = parseFloat(data.lng)
 
-
                 	initMap(lat, lng);
-                	$("#map").css({display:"block"})
-				
+                	$("#map").css({display:"block"})				
 				}
 			}
 		);

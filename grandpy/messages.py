@@ -13,10 +13,10 @@ ADRESS_MGS = [
 
 
 SUMMARY_MGS = [
-    "GrandPy : Et t'ai je déjà raconté cette histoire ? :\n",
-    "GrandPy : Je me souviens que ....\n",
-    "GrandPy : Si tu as deux minutes , je peux te raconter une petite histoire.. :\n",
-    "GrandPy : Est-ce que tu savais que....\n",
+    "GrandPy : Et t'ai je déjà raconté cette histoire ? :",
+    "GrandPy : Je me souviens que ....",
+    "GrandPy : Si tu as deux minutes , je peux te raconter une petite histoire.. :",
+    "GrandPy : Est-ce que tu savais que....",
 	]
 
 
