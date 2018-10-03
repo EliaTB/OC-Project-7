@@ -12,8 +12,8 @@ class Wiki:
             wiki_page = wikipedia.page(question)
             
             return {
-                "title": wiki_page.title,
-                "summary": wiki_page.summary
+                "summary": wiki_page.summary[:500],
+                "url": wiki_page.url
             }
 
 

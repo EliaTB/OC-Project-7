@@ -35,18 +35,17 @@ def get_json():
 		        	lng = gmap_place["longitude"],
 		        	message1 = msg_adress,
 		        	message2 = msg_summary,
+		        	url = wiki_result["url"],
 		        	error = False)
 
 		else:
 			failure_msg = return_failure()
 			return jsonify(message1 = failure_msg,
-						message2 = "",
 						error = True)
 
 	else:
 		failure_msg = return_failure()
 		return jsonify(message1 = failure_msg,
-					message2 = "",
 					error = True)
 
 

@@ -1,7 +1,15 @@
+img {
+    width: 75px;
+    height: 75px;
+    margin-top: 10px;
+}
+
+
 #map {
     height: 350px; 
     display: none;
-    margin-top: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
     border-radius: 5px;
 }
 
@@ -19,4 +27,8 @@
 .box {
     padding: 6px;
     margin: 8px 0;
+}
+
+.progress {
+    display: none;
 }
