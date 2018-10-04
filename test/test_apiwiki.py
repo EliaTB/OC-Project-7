@@ -1,5 +1,4 @@
 from grandpy.apiwiki import *
-import requests
 
 
 class TestApiWiki:

@@ -1,5 +1,3 @@
-import requests
-
 from grandpy.gmaps import *
 
 
@@ -7,20 +5,20 @@ class TestGMaps:
 
 	def test_gmaps_result(self, monkeypatch):
 		
-		result = {"results": [{"geometry": {"location": \
-            {"lat": 48.856614, "lng": 2.3522219}}, "formatted_address": "Paris, France"}]}
+		result = {
+			"latitude": 48.856614,
+			"longitude": 2.3522219,
+			"address": "Paris, France"
+			}
 
 
 		def mockreturn(self, question):
 			return result
-
-		monkeypatch.setattr(requests, 'get', mockreturn)
+		place = "paris"
+		monkeypatch.setattr(GMaps, 'get_position', mockreturn)
 		gmap = GMaps('api_key')
-		gmap_result = gmap.get_position('paris')
+		gmap_result = gmap.get_position(place)
 
-		assert gmap_result['address'] == (
-			result["results"][0]['formatted_address'])
-		assert gmap_result['latitude'] == (
-			result["results"][0]['geometry']['location']['lat'])
-		assert gmap_result['longitude'] == (
-		 	result["results"][0]['geometry']['location']['lng'])
+		assert gmap_result['address'] == "Paris, France"
+		assert gmap_result['latitude'] == 48.856614
+		assert gmap_result['longitude'] == 2.3522219
