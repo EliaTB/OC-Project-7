@@ -1,4 +1,4 @@
-from requests import get
+import googlemaps
 
 class GMaps:
 
@@ -7,27 +7,19 @@ class GMaps:
  
 
     def get_position(self, question):
-        parameters = {
-            'address': " ".join(question),
-            'key': self.api_key
-            }
-
-        response = get('https://maps.googleapis.com/maps/api/geocode/json',
-                       params=parameters)
-
-        data = response.json()
+        gmaps = googlemaps.Client(key=self.api_key)
+        gmap_result = gmaps.geocode(question, region='fr')
 
         try:
-            address = data["results"][0]["formatted_address"]
-            lat = data["results"][0]["geometry"]["location"]["lat"]
-            lng = data["results"][0]["geometry"]["location"]["lng"]
+            address = gmap_result[0]["formatted_address"]
+            lat = gmap_result[0]["geometry"]["location"]["lat"]
+            lng = gmap_result[0]["geometry"]["location"]["lng"]
 
             return {
                 "address":  address,
                 "latitude": lat,
                 "longitude": lng
             }
-
-        
+       
         except IndexError:
             return "no result"

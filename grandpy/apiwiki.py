@@ -1,21 +1,34 @@
-from mediawiki import MediaWiki
-wikipedia = MediaWiki()
+import wikipedia
 
 
 class Wiki:
 
     def __init__(self):
-        wikipedia.set_api_url("https://fr.wikipedia.org/w/api.php")
+        wikipedia.set_lang("fr")
 
-    def get_wiki_result(self, question):
+    def get_wiki_result(self, lat, lng, question):
         try:
+
             wiki_page = wikipedia.page(question)
-            
+                
             return {
                 "summary": wiki_page.summary[:500],
                 "url": wiki_page.url
             }
 
+        except (wikipedia.exceptions.DisambiguationError):
+            try:
+                wiki_search = wikipedia.geosearch(lat, lng, question)
+                wiki_page = wikipedia.page(wiki_search[0])
 
-        except IndexError:
-            return "no result"
+
+                return {
+                "summary": wiki_page.summary[:500],
+                "url": wiki_page.url
+                }
+
+            except IndexError:
+                return "no result"
+
+            except (wikipedia.exceptions.DisambiguationError):
+                return "no result"

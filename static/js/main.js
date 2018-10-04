@@ -1,13 +1,13 @@
 $(function() {
 	$('#submit').on('click', function() {
 		var userInput = $('input[name="question"]').val();
-
 		if (userInput == "") {
-			$("#gmapresult").text("Grandpy: Vous n'avez rien mis dans la barre de recherche!");
-			$("#map").css({display:"none"});
-			$("#wikireuslt").css({display:"none"});
+			addGranpyMsg("Vous n'avez rien mis dans la barre de recherche!")
 		}
 		else {
+			addUserMsg(userInput);
+			$(".loader").css({display:"block"})	
+					
 			$.getJSON(			
 				//url
 				'/_get_json',				
@@ -17,12 +17,11 @@ $(function() {
 				function (data) {							
 
 					if (data.error) {
-						addGPyMess(data.message1)
-
+						addGranpyMsg(data.message1)
 					}
 					else {
-						addMesg(data.message1)
-						addMesg(data.message2, data.url)
+						addGranpyMsg(data.message1)
+						addGranpyMsg(data.message2, data.url)
 
 						var lat = (data.lat);
 						var lng = (data.lng);
@@ -30,6 +29,7 @@ $(function() {
 	                	initMap(lat, lng);
 	                	$("#map").css({display:"block"});				
 					}
+					$(".loader").css({display:"none"})
 				}
 			);
 		}
@@ -51,7 +51,7 @@ function initMap(lat, lng) {
     });
 }
 
-function addMesg(message, url=null){
+function addGranpyMsg(message, url=null){
 	var grandpyElt = document.createElement("strong");
 	grandpyElt.appendChild(document.createTextNode('Grandpy: '));
 
@@ -61,7 +61,7 @@ function addMesg(message, url=null){
 	
 
     div = document.createElement('div');
-    div.classList.add("box");
+    div.classList.add("msg");
     div.appendChild(messageElt);
 
 	if (url !== null) {
@@ -72,5 +72,20 @@ function addMesg(message, url=null){
 		messageElt.appendChild(urlElt)
 	}
 
-    $("#grandpyanswer").append(div);
+    document.getElementById("grandpyanswer").append(div);
+}
+
+function addUserMsg(message) {
+	var userElt = document.createElement("strong");
+	userElt.appendChild(document.createTextNode('User: '));
+
+	var messageElt = document.createElement("p");
+	messageElt.appendChild(userElt);
+	messageElt.appendChild(document.createTextNode(message));
+
+	div = document.createElement('div');
+    div.classList.add("msg", "darker");
+    div.appendChild(messageElt);
+
+    document.getElementById("grandpyanswer").append(div);
 }
