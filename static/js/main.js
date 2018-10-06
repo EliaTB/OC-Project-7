@@ -2,7 +2,8 @@ $(function() {
 	$('#submit').on('click', function() {
 		var userInput = $('input[name="question"]').val();
 		if (userInput == "") {
-			addGranpyMsg("Vous n'avez rien mis dans la barre de recherche!")
+			addGranpyMsg("Vous n'avez rien mis dans la barre de recherche!");
+			$("#map").css({display:"none"});
 		}
 		else {
 			addUserMsg(userInput);
@@ -17,7 +18,8 @@ $(function() {
 				function (data) {							
 
 					if (data.error) {
-						addGranpyMsg(data.message1)
+						addGranpyMsg(data.message1);
+						$("#map").css({display:"none"});
 					}
 					else {
 						addGranpyMsg(data.message1)
@@ -29,7 +31,7 @@ $(function() {
 	                	initMap(lat, lng);
 	                	$("#map").css({display:"block"});				
 					}
-					$(".loader").css({display:"none"})
+					$(".loader").css({display:"none"});
 				}
 			);
 		}
