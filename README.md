@@ -10,7 +10,7 @@ This project is part of the OC Python developper course.
 
 ## Utilisation
 
-You can view the application here: https://lit-river-57071.herokuapp.com/
+You can view the application here: https://p7-grandpybot.herokuapp.com/
 
 #### Requierements
 
