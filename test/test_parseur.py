@@ -1,10 +1,8 @@
-import pytest
-
-from grandpy.parseur import *
+from grandpy.parseur import Parseur
 from grandpy.stop_word import STOP_WORDS
 
 
-parseur = Parseur(CUSTOM_WORDS, STOP_WORDS)
+parseur = Parseur(STOP_WORDS)
 
 
 class TestParseur:

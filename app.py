@@ -1,17 +1,18 @@
 import os
 from flask import Flask, render_template, request, jsonify
 
-from grandpy.apiwiki import *
-from grandpy.gmaps import *
-from grandpy.parseur import *
-from grandpy.messages import *
+from grandpy.apiwiki import Wiki
+from grandpy.gmaps import GMaps
+from grandpy.parseur import Parseur
 from grandpy.stop_word import STOP_WORDS
+from grandpy.messages import *
+
 
 
 app = Flask(__name__)
 google_api_key = os.environ.get('GM_API_KEY')
 
-parser = Parseur(CUSTOM_WORDS, STOP_WORDS)
+parser = Parseur(STOP_WORDS)
 gmap = GMaps(google_api_key)
 wiki = Wiki()
 
