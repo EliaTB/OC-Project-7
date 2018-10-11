@@ -7,7 +7,7 @@ class Parseur:
         self.stop_words = stop_words
 
     def get_relevant_word(self, input_user):
-        """parse the user input"""
+        """parse the user input to return the main keywords"""
 
         input_user = re.sub(r"\W+", " ", input_user).lower()
         input_user = input_user.split(" ")

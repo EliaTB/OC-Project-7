@@ -19,5 +19,5 @@ To install all of the required dependencies you can use the command : `pip insta
 #### Launch the application
 
 ```sh
-$ python3 pybot.py
+$ python3 app.py
 ```
